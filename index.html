@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Production HATTAIS</title>
+</head>
+<body>
+
+<form id="test-form">
+	<table cellspacing="0" cellpadding="5" style='margin:auto'>
+		<tr align='center'>
+			<td width='120px' style='text-align:center;vertical-align:middle'>
+				<h3>RAISON :</h3>
+			</td>
+		</tr>
+		
+		<tr align='center'>
+			<td width='120px' style='text-align:left;vertical-align:middle'>
+				<input type="radio" id="01" name="raison" value="01">
+					<label for="01">Nouveau SAV</label>
+				<br>
+				<input type="radio" id="02" name="raison" value="02">
+					<label for="02">Retour SAV</label>
+				<br>
+				<input type="radio" id="03" name="raison" value="03">
+					<label for="03">Etude DEVIS</label>
+			</td>
+		</tr>
+
+	<tr align='center'>
+		<td width='120px' style='text-align:center;vertical-align:middle'>
+			<br>
+			<button type="submit" id="submit-form" name="envoyer" >Envoyer</button>
+		</td>
+	</tr>
+	</table>
+	</form>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<script type="text/javascript" src="./jquery.serializeObject.min.js"></script>
+
+<script type="text/javascript">
+    var $form = $('form#test-form'),
+        url = 'https://script.google.com/macros/s/AKfycbyJ7_TTp1UNBFVGB4XNgrbquEN_gY-5n4GhtmqqjFHCzRLidSDq/exec';
+
+    $('#submit-form').on('click', function(e) {
+        e.preventDefault();
+        var jqxhr = $.ajax({
+            url: url,
+            method: "GET",
+            dataType: "json",
+            data: $form.serializeObject()
+        }).done(function(){
+               // do something
+          }
+         );
+    });
+</script>
+
+</body>
+</html>
