@@ -2,33 +2,70 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Production HATTAIS</title>
+		<title>Production HATTAIS</title>
+	<link rel="stylesheet" href="lib.css">
 </head>
 <body>
 
 <form id="test-form">
 	<table cellspacing="0" cellpadding="5" style='margin:auto'>
 		<tr align='center'>
-			<td width='120px' style='text-align:center;vertical-align:middle'>
+			<td colspan="2" style='text-align:center;vertical-align:middle'>
 				<h3>RAISON :</h3>
 			</td>
 		</tr>
 		
 		<tr align='center'>
-			<td width='120px' style='text-align:left;vertical-align:middle'>
-				<input type="radio" id="01" name="raison" value="new_sav">
-					<label for="01">Nouveau SAV</label>
+			<td width='500px' style='text-align:right;vertical-align:middle'>
+				<input class="new_sav" type="radio" id="01" name="raison" value="new_sav" onchange="hidding()">
 				<br>
-				<input type="radio" id="02" name="raison" value="retour_sav">
-					<label for="02">Retour SAV</label>
+				<input class="retour_sav" type="radio" id="02" name="raison" value="retour_sav" onchange="hidding()">
 				<br>
-				<input type="radio" id="03" name="raison" value="etude">
-					<label for="03">Etude DEVIS</label>
-			<hr>
+				<input class="etude" type="radio" id="03" name="raison" value="etude" onchange="hidding()">
+			</td>
+			<td width='500px' style='text-align:left;vertical-align:middle'>
+				<label for="01">Nouveau SAV</label>
+				<br>
+				<label for="02">Retour SAV</label>
+				<br>
+				<label for="03">Etude DEVIS</label>
 			</td>
 		</tr>
+		
 		<tr align='center'>
-			<td width='120px' style='text-align:center;vertical-align:middle'>
+			<td colspan="2" style='text-align:center;vertical-align:middle'>
+				 <hr>
+			</td>
+		</tr>
+		
+		<tr class="hRetourSav" align='center'>
+			<td width='500px' style='text-align:right;vertical-align:middle'>
+				<input class="bfiche" type="checkbox" name="bfiche" onchange="hidding()">
+			</td>
+			<td width='500px' style='text-align:left;vertical-align:middle'>
+				<label for="bfiche">Sans N° de fiche.</label>
+			</td>
+		</tr>
+		
+		<tr align='center'>
+			<td width='500px' style='text-align:right;vertical-align:middle'>
+				<label class="fiche" for="fiche">Numero de fiche :</label>
+			</td>
+			<td width='500px' style='text-align:left;vertical-align:middle'>
+				<input class="fiche" type="text" id="fiche" name="fiche" size="10">
+			</td>
+		</tr>
+		<tr class="hRetourSav" align='center'>
+			<td width='500px' style='text-align:right;vertical-align:middle'>
+				<label for="adresse">Adresse :</label>
+			</td>
+			<td width='500px' style='text-align:left;vertical-align:middle'>
+				<input type="text" id="adresse" name="adresse" size="30">
+			</td>
+		</tr>
+		
+		<tr align='center'>
+			<td colspan="2" style='text-align:center;vertical-align:middle'>
 				<button type="submit" id="submit-form" name="envoyer" >Envoyer</button>
 			</td>
 		</tr>
@@ -38,6 +75,24 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
 <script type="text/javascript" src="./jquery.serializeObject.min.js"></script>
+
+<script type="text/javascript">
+    function hidding()
+    {
+        if($('.retour_sav').is(":checked")) {
+            $(".hRetourSav").hide();
+			$(".fiche").show();
+			$(".bfiche").prop("checked", false);
+			}
+        else
+            $(".hRetourSav").show();
+			
+		if($('.bfiche').is(":checked"))   
+            $(".fiche").hide();
+        else
+            $(".fiche").show();
+    }
+</script>
 
 <script type="text/javascript">
     var $form = $('form#test-form'),
