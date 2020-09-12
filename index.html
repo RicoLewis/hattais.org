@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
 		<title>Production HATTAIS</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
 	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 	<meta http-equiv="Pragma" content="no-cache" />
 	<meta http-equiv="Expires" content="0" />
@@ -10,38 +11,39 @@
 </head>
 <body>
 
-<form id="test-form">
-	<table cellspacing="0" cellpadding="5" style='margin:auto'>
+<table cellspacing="0" cellpadding="5" style='margin:auto'>
+	<form id="production" >
 		<tr align='center'>
 			<td colspan="2" style='text-align:center;vertical-align:middle'>
-				<h3>RAISON :</h3>
+				<h3>FICHE D'INTERVENTION :</h3>
 			</td>
 		</tr>
 		
 		<tr align='center'>
 			<td width='500px' style='text-align:right;vertical-align:middle'>
-				<input class="new_sav" type="radio" id="01" name="raison" value="new_sav" onchange="hidding()">
+				<input class="new_sav" type="radio" id="01" name="raison" value="new_sav" checked onchange="hidding()">
 				<br>
 				<input class="retour_sav" type="radio" id="02" name="raison" value="retour_sav" onchange="hidding()">
 				<br>
 				<input class="etude" type="radio" id="03" name="raison" value="etude" onchange="hidding()">
 			</td>
 			<td width='500px' style='text-align:left;vertical-align:middle'>
-				<label for="01">Nouveau SAV</label>
+				<label for="01" style='line-height:130%'>Nouveau SAV</label>
 				<br>
-				<label for="02">Retour SAV</label>
+				<label for="02" style='line-height:130%'>Retour SAV</label>
 				<br>
-				<label for="03">Etude DEVIS</label>
+				<label for="03" style='line-height:130%'>Etude DEVIS</label>
 			</td>
 		</tr>
 		
 		<tr align='center'>
 			<td colspan="2" style='text-align:center;vertical-align:middle'>
-				 <hr>
+				 <hr width='500px'>
+				 <U><strong>INFORMATIONS :</strong></U>
 			</td>
 		</tr>
 		
-		<tr class="hRetourSav" align='center'>
+		<tr class="cl_bfiche" align='center'>
 			<td width='500px' style='text-align:right;vertical-align:middle'>
 				<input class="bfiche" type="checkbox" name="bfiche" onchange="hidding()">
 			</td>
@@ -58,7 +60,7 @@
 				<input class="fiche" type="text" id="fiche" name="fiche" size="10">
 			</td>
 		</tr>
-		<tr class="hRetourSav" align='center'>
+		<tr class="cl_adresse" align='center'>
 			<td width='500px' style='text-align:right;vertical-align:middle'>
 				<label for="adresse">Adresse :</label>
 			</td>
@@ -67,38 +69,209 @@
 			</td>
 		</tr>
 		
-		<tr align='center'>
+		<tr class="cl_type" align='center'>
 			<td colspan="2" style='text-align:center;vertical-align:middle'>
-				<button type="submit" id="submit-form" name="envoyer" >Envoyer</button>
+				 <hr width='500px'>
+				 <U><strong>TYPE DE SAV :</strong></U>
 			</td>
 		</tr>
-	</table>
+		
+		<tr class="cl_type" align='center'>
+			<td width='500px' style='text-align:right;vertical-align:middle'>
+				<input type="radio" id="11" name="type" value="Dépannage">
+				<br>
+				<input type="radio" id="12" name="type" value="Inter sur RDV">
+				<br>
+				<input type="radio" id="13" name="type" value="Changement de Nom">
+				<br>
+				<input type="radio" id="14" name="type" value="Création de Badge/Émetteur">
+			</td>
+			<td width='500px' style='text-align:left;vertical-align:middle'>
+				<label for="11" style='line-height:130%'>Dépannage</label>
+				<br>
+				<label for="12" style='line-height:130%'>Inter sur RDV</label>
+				<br>
+				<label for="13" style='line-height:130%'>Changement de Nom</label>
+				<br>
+				<label for="13" style='line-height:130%'>Création de Badge/Émetteur</label>
+			</td>
+		</tr>
+		
+		<tr class="cl_auteur" align='center' hidden>
+			<td colspan="2" style='text-align:center;vertical-align:middle'>
+				 <hr width='500px'>
+				 <U><strong>AUTEUR DU RETOUR :</strong></U>
+			</td>
+		</tr>
+		
+		<tr class="cl_auteur" align='center' hidden>
+			<td width='500px' style='text-align:right;vertical-align:middle'>
+				<input type="radio" id="21" name="auteur" value="Accueil">
+				<br>
+				<input type="radio" id="22" name="auteur" value="David">
+				<br>
+				<input type="radio" id="23" name="auteur" value="Clément">
+				<br>
+				<input type="radio" id="24" name="auteur" value="Eric">
+			</td>
+			<td width='500px' style='text-align:left;vertical-align:middle'>
+				<label for="31" style='line-height:120%'>Accueil</label>
+				<br>
+				<label for="32" style='line-height:130%'>David</label>
+				<br>
+				<label for="33" style='line-height:130%'>Clément</label>
+				<br>
+				<label for="34" style='line-height:130%'>Eric</label>
+			</td>
+		</tr>
+		
+		<tr class="cl_motif" align='center' hidden>
+			<td colspan="2" style='text-align:center;vertical-align:middle'>
+				 <hr width='500px'>
+				 <U><strong>MOTIF DU RETOUR :</strong></U>
+			</td>
+		</tr>
+		
+		<tr class="cl_motif" align='center' hidden>
+			<td width='500px' style='text-align:right;vertical-align:middle'>
+				<input type="radio" id="31" name="motif" value="Relance">
+				<br>
+				<input type="radio" id="32" name="motif" value="Info">
+				<br>
+				<input type="radio" id="33" name="motif" value="Prise en charge">
+				<br>
+				<input type="radio" id="34" name="motif" value="En cours">
+				<br>
+				<input type="radio" id="35" name="motif" value="RDV">
+				<br>
+				<input type="radio" id="36" name="motif" value="Traité">
+				<br>
+				<input type="radio" id="37" name="motif" value="Annulation">
+			</td>
+			<td width='500px' style='text-align:left;vertical-align:middle'>
+				<label for="31" style='line-height:120%'>Relance</label>
+				<br>
+				<label for="32" style='line-height:130%'>Info</label>
+				<br>
+				<label for="33" style='line-height:130%'>Prise en charge</label>
+				<br>
+				<label for="34" style='line-height:130%'>En cours</label>
+				<br>
+				<label for="35" style='line-height:130%'>RDV</label>
+				<br>
+				<label for="36" style='line-height:130%'>Traité</label>
+				<br>
+				<label for="37" style='line-height:130%'>Annulation</label>
+			</td>
+		</tr>
+		
+		<tr align='center'>
+			<td colspan="2" style='text-align:center;vertical-align:middle'>
+				 <hr width='500px'>
+			</td>
+		</tr>
+		
+		<tr class="clDescription" align='center'>
+			<td colspan="2" width='1000px' style='vertical-align:middle'>
+				<label for="description">Description :</label>
+				<br>
+				<textarea id="description" name="description" rows="10" cols="60"></textarea>
+			</td>
+		</tr>
+		
+		<tr class="cl_b_pj" align='center'>
+			<td width='500px' style='text-align:right;vertical-align:middle'>
+				<input class="cl_b_pj_chk" type="checkbox" name="bPJ" onchange="hidding()">
+			</td>
+			<td width='500px' style='text-align:left;vertical-align:middle'>
+				<label for="bfiche">Pièce(s) Jointe(s) ?</label>
+			</td>
+		</tr>
 	</form>
+	
+	<tr class="cl_pj" align='center' hidden>
+		<td colspan="2" style='text-align:center;vertical-align:middle'>		
+			<form action="https://script.google.com/macros/s/AKfycbzLxSW0oALye9O5eHUjhGAjCGHRPBpPvaN_56Er6DOJeTD_ssc/exec" id="form_pj" method="post">
+				<div id="data"></div>
+				<input name="file" id="pj" type="file">
+				<input id="pj_submit" type="submit" hidden>
+			</form>		
+		</td>
+	</tr>
+	
+	<tr align='center'>
+			<td colspan="2" style='text-align:center;vertical-align:middle'>
+				<button type="submit" form="production" id="submit-form" name="envoyer" >Envoyer</button>
+			</td>
+		</tr>
+</table>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
 <script type="text/javascript" src="./jquery.serializeObject.min.js"></script>
 
 <script type="text/javascript">
-    function hidding()
-    {
-        if($('.retour_sav').is(":checked")) {
-            $(".hRetourSav").hide();
+    function hidding() {
+		if($('.new_sav').is(":checked")) {
+			$(".cl_adresse").show();
+			$(".cl_bfiche").show();
+			$(".cl_type").show();
+			$(".cl_auteur").hide();
+			$(".cl_motif").hide();
+		}
+        else if($('.retour_sav').is(":checked")) {
+            //$(".cl_adresse").prop("disabled", true);
+			$(".cl_adresse").hide();
+			$(".cl_bfiche").hide();
+			$(".cl_type").hide();
+			$(".cl_auteur").show();
+			$(".cl_motif").show();
 			$(".fiche").show();
 			$(".bfiche").prop("checked", false);
 			}
-        else
-            $(".hRetourSav").show();
+        else {
+			//$(".cl_adresse").prop("disabled", false);
+			$(".cl_adresse").show();
+			$(".cl_bfiche").show();
+			$(".cl_type").hide();
+			$(".cl_auteur").hide();
+			$(".cl_motif").hide();
+			}
 			
 		if($('.bfiche').is(":checked"))   
             $(".fiche").hide();
         else
             $(".fiche").show();
+			
+		if($('.cl_b_pj_chk').is(":checked"))   
+            $(".cl_pj").show();
+        else
+            $(".cl_pj").hide();
     }
 </script>
 
+<script>
+	//ENVOI LES PIECES JOINTES SUR LE DRIVE
+
+    $('#pj').on("change", function() {
+        var file = this.files[0];
+        var fr = new FileReader();
+        fr.fileName = file.name;
+        fr.onload = function(e) {
+            e.target.result
+            html = '<input type="hidden" name="data" value="' + e.target.result.replace(/^.*,/, '') + '" >';
+            html += '<input type="hidden" name="mimetype" value="' + e.target.result.match(/^.*(?=;)/)[0] + '" >';
+            html += '<input type="hidden" name="filename" value="' + e.target.fileName + '" >';
+            $("#data").empty().append(html);
+        }
+        fr.readAsDataURL(file);
+    });
+</script>
+
 <script type="text/javascript">
-    var $form = $('form#test-form'),
+	//ENVOI LES DONNEES SUR LA FEUILLE DE CALCULE
+
+    var $form = $('form#production'),
         url = 'https://script.google.com/macros/s/AKfycbyJ7_TTp1UNBFVGB4XNgrbquEN_gY-5n4GhtmqqjFHCzRLidSDq/exec';
 
     $('#submit-form').on('click', function(e) {
@@ -112,7 +285,8 @@
                // do something
           }
          );
-    });
+	if($('.cl_b_pj_chk').is(":checked")) $('#form_pj').submit();
+    });	
 </script>
 
 </body>
