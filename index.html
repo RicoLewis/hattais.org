@@ -21,18 +21,18 @@
 		
 		<tr align='center'>
 			<td width='500px' style='text-align:right;vertical-align:middle'>
-				<input class="new_sav" type="radio" id="01" name="raison" value="new_sav" checked onchange="hidding()">
+				<input class="new_sav" type="radio" id="01a" name="raison" value="new_sav" checked onchange="hidding()">
 				<br>
-				<input class="retour_sav" type="radio" id="02" name="raison" value="retour_sav" onchange="hidding()">
+				<input class="retour_sav" type="radio" id="02a" name="raison" value="retour_sav" onchange="hidding()">
 				<br>
-				<input class="etude" type="radio" id="03" name="raison" value="etude" onchange="hidding()">
+				<input class="etude" type="radio" id="03a" name="raison" value="etude" onchange="hidding()">
 			</td>
 			<td width='500px' style='text-align:left;vertical-align:middle'>
-				<label for="01" style='line-height:130%'>Nouveau SAV</label>
+				<label for="01b" style='line-height:130%'>Nouveau SAV</label>
 				<br>
-				<label for="02" style='line-height:130%'>Retour SAV</label>
+				<label for="02b" style='line-height:130%'>Retour SAV</label>
 				<br>
-				<label for="03" style='line-height:130%'>Etude DEVIS</label>
+				<label for="03b" style='line-height:130%'>Etude DEVIS</label>
 			</td>
 		</tr>
 		
@@ -57,7 +57,7 @@
 				<label class="fiche" for="fiche">Numero de fiche :</label>
 			</td>
 			<td width='500px' style='text-align:left;vertical-align:middle'>
-				<input class="fiche" type="text" id="fiche" name="fiche" size="10">
+				<input class="fiche" type="text" id="id_inp_fiche" name="fiche" size="10">
 			</td>
 		</tr>
 		<tr class="cl_adresse" align='center'>
@@ -106,22 +106,27 @@
 		
 		<tr class="cl_auteur" align='center' hidden>
 			<td width='500px' style='text-align:right;vertical-align:middle'>
-				<input type="radio" id="21" name="auteur" value="Accueil">
+				<input type="radio" id="21" name="auteur" value="Accueil" onchange="hidding()">
 				<br>
-				<input type="radio" id="22" name="auteur" value="David">
+				<input type="radio" id="22" name="auteur" value="David" onchange="hidding()">
 				<br>
-				<input type="radio" id="23" name="auteur" value="Clément">
+				<input type="radio" id="23" name="auteur" value="Clément" onchange="hidding()">
 				<br>
-				<input type="radio" id="24" name="auteur" value="Eric">
+				<input type="radio" id="24" name="auteur" value="Eric" onchange="hidding()">
+				<br>
+				<input class="cl_auteur_radio_autre" type="radio" id="25" name="auteur" onchange="hidding()">
 			</td>
 			<td width='500px' style='text-align:left;vertical-align:middle'>
-				<label for="31" style='line-height:120%'>Accueil</label>
+				<label for="21" style='line-height:120%'>Accueil</label>
 				<br>
-				<label for="32" style='line-height:130%'>David</label>
+				<label for="22" style='line-height:130%'>David</label>
 				<br>
-				<label for="33" style='line-height:130%'>Clément</label>
+				<label for="23" style='line-height:130%'>Clément</label>
 				<br>
-				<label for="34" style='line-height:130%'>Eric</label>
+				<label for="24" style='line-height:130%'>Eric</label>
+				<br>
+				<label for="251" style='line-height:130%'>Autre :</label>
+				<input class="cl_auteur_input_autre" type="text" id="252" name="inp_auteur" size="10">
 			</td>
 		</tr>
 		
@@ -211,6 +216,28 @@
 <script type="text/javascript" src="./jquery.serializeObject.min.js"></script>
 
 <script type="text/javascript">
+	document.getElementById("id_inp_fiche").value = $_GET("fiche");
+	if($_GET("raison") == 'retour_sav') {
+		document.getElementById("01a").checked = false;
+		document.getElementById("02a").checked = true;
+		hidding();
+	}
+	
+	function $_GET(param) {
+		var vars = {};
+		window.location.href.replace( location.hash, '' ).replace( 
+			/[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+			function( m, key, value ) { // callback
+				vars[key] = value !== undefined ? value : '';
+			}
+		);
+
+		if ( param ) {
+			return vars[param] ? vars[param] : null;	
+		}
+		return vars;
+	}
+
     function hidding() {
 		if($('.new_sav').is(":checked")) {
 			$(".cl_adresse").show();
@@ -242,6 +269,11 @@
             $(".fiche").hide();
         else
             $(".fiche").show();
+			
+		if($('.cl_auteur_radio_autre').is(":checked"))
+            $(".cl_auteur_input_autre").show();
+        else
+            $(".cl_auteur_input_autre").hide();
 			
 		if($('.cl_b_pj_chk').is(":checked"))   
             $(".cl_pj").show();
@@ -275,6 +307,9 @@
         url = 'https://script.google.com/macros/s/AKfycbyJ7_TTp1UNBFVGB4XNgrbquEN_gY-5n4GhtmqqjFHCzRLidSDq/exec';
 
     $('#submit-form').on('click', function(e) {
+		if($('.cl_auteur_radio_autre').is(":checked")) {
+			document.getElementById("25").value = document.getElementById("252").value;
+		}
         e.preventDefault();
         var jqxhr = $.ajax({
             url: url,
@@ -286,6 +321,7 @@
           }
          );
 	if($('.cl_b_pj_chk').is(":checked")) $('#form_pj').submit();
+	else window.top.location.href="http://hattais.org";
     });	
 </script>
 
