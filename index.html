@@ -162,7 +162,7 @@
 				<br>
 				<label for="34" style='line-height:130%'>En cours</label>
 				<br>
-				<label for="35" style='line-height:130%'>RDV</label>
+				<label for="35" style='line-height:130%'>RDV (non pris en compte pour le moment)</label>
 				<br>
 				<label for="36" style='line-height:130%'>Traité</label>
 				<br>
@@ -196,7 +196,7 @@
 	
 	<tr class="cl_pj" align='center' hidden>
 		<td colspan="2" style='text-align:center;vertical-align:middle'>		
-			<form action="https://script.google.com/macros/s/AKfycbzLxSW0oALye9O5eHUjhGAjCGHRPBpPvaN_56Er6DOJeTD_ssc/exec" id="form_pj" method="post">
+			<form action="https://script.google.com/macros/s/AKfycbyJ7_TTp1UNBFVGB4XNgrbquEN_gY-5n4GhtmqqjFHCzRLidSDq/exec" id="form_pj" method="post">
 				<div id="data"></div>
 				<input name="file" id="pj" type="file">
 				<input id="pj_submit" type="submit" hidden>
@@ -206,7 +206,7 @@
 	
 	<tr align='center'>
 			<td colspan="2" style='text-align:center;vertical-align:middle'>
-				<button type="submit" form="production" id="submit-form" name="envoyer" >Envoyer</button>
+				<button type="submit" form="production" id="submit-form" name="envoyer">Envoyer</button>
 			</td>
 		</tr>
 </table>
@@ -282,7 +282,7 @@
     }
 </script>
 
-<script>
+<script type="text/javascript">
 	//ENVOI LES PIECES JOINTES SUR LE DRIVE
 
     $('#pj').on("change", function() {
@@ -296,20 +296,18 @@
             html += '<input type="hidden" name="filename" value="' + e.target.fileName + '" >';
             $("#data").empty().append(html);
         }
+		$('#submit-form').submit();
         fr.readAsDataURL(file);
     });
-</script>
-
-<script type="text/javascript">
+	
+	
 	//ENVOI LES DONNEES SUR LA FEUILLE DE CALCULE
 
     var $form = $('form#production'),
         url = 'https://script.google.com/macros/s/AKfycbyJ7_TTp1UNBFVGB4XNgrbquEN_gY-5n4GhtmqqjFHCzRLidSDq/exec';
-
+	
     $('#submit-form').on('click', function(e) {
-		if($('.cl_auteur_radio_autre').is(":checked")) {
-			document.getElementById("25").value = document.getElementById("252").value;
-		}
+		if($('.cl_auteur_radio_autre').is(":checked")) document.getElementById("25").value = document.getElementById("252").value;
         e.preventDefault();
         var jqxhr = $.ajax({
             url: url,
@@ -317,12 +315,12 @@
             dataType: "json",
             data: $form.serializeObject()
         }).done(function(){
-               // do something
+               //$('#form_pj').submit();
           }
          );
-	if($('.cl_b_pj_chk').is(":checked")) $('#form_pj').submit();
-	else window.top.location.href="http://hattais.org";
-    });	
+		 if($('.cl_b_pj_chk').is(":checked")) $('#form_pj').submit();
+		 //window.top.location.href="http://hattais.org";
+    });
 </script>
 
 </body>
