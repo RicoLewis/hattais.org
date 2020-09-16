@@ -78,13 +78,13 @@
 		
 		<tr class="cl_type" align='center'>
 			<td width='500px' style='text-align:right;vertical-align:middle'>
-				<input type="radio" id="11" name="type" value="Dépannage">
+				<input type="radio" id="11" name="type" value="Dépannage" onchange="hidding()">
 				<br>
-				<input type="radio" id="12" name="type" value="Inter sur RDV">
+				<input type="radio" id="12" name="type" value="Inter sur RDV" onchange="hidding()">
 				<br>
-				<input type="radio" id="13" name="type" value="Changement de Nom">
+				<input type="radio" id="13" name="type" value="Changement de Nom" onchange="hidding()">
 				<br>
-				<input type="radio" id="14" name="type" value="Création de Badge/Émetteur">
+				<input type="radio" id="14" name="type" value="Création de Badge/Émetteur" onchange="hidding()">
 			</td>
 			<td width='500px' style='text-align:left;vertical-align:middle'>
 				<label for="11" style='line-height:130%'>Dépannage</label>
@@ -106,27 +106,27 @@
 		
 		<tr class="cl_auteur" align='center' hidden>
 			<td width='500px' style='text-align:right;vertical-align:middle'>
-				<input type="radio" id="21" name="auteur" value="Accueil" onchange="hidding()">
+				<input type="radio" id="21a" name="auteur" value="Accueil" onchange="hidding()">
 				<br>
-				<input type="radio" id="22" name="auteur" value="David" onchange="hidding()">
+				<input type="radio" id="22a" name="auteur" value="David" onchange="hidding()">
 				<br>
-				<input type="radio" id="23" name="auteur" value="Clément" onchange="hidding()">
+				<input type="radio" id="23a" name="auteur" value="Clément" onchange="hidding()">
 				<br>
-				<input type="radio" id="24" name="auteur" value="Eric" onchange="hidding()">
+				<input type="radio" id="24a" name="auteur" value="Eric" onchange="hidding()">
 				<br>
-				<input class="cl_auteur_radio_autre" type="radio" id="25" name="auteur" onchange="hidding()">
+				<input type="radio" id="25a" name="auteur" value=" " onchange="hidding()">
 			</td>
 			<td width='500px' style='text-align:left;vertical-align:middle'>
-				<label for="21" style='line-height:120%'>Accueil</label>
+				<label for="21a" style='line-height:120%'>Accueil</label>
 				<br>
-				<label for="22" style='line-height:130%'>David</label>
+				<label for="22a" style='line-height:130%'>David</label>
 				<br>
-				<label for="23" style='line-height:130%'>Clément</label>
+				<label for="23a" style='line-height:130%'>Clément</label>
 				<br>
-				<label for="24" style='line-height:130%'>Eric</label>
+				<label for="24a" style='line-height:130%'>Eric</label>
 				<br>
 				<label for="251" style='line-height:130%'>Autre :</label>
-				<input class="cl_auteur_input_autre" type="text" id="252" name="inp_auteur" size="10">
+				<input class="cl_auteur_input_autre" type="text" id="252" name="inp_auteur" size="10" onchange="hidding()">
 			</td>
 		</tr>
 		
@@ -139,34 +139,34 @@
 		
 		<tr class="cl_motif" align='center' hidden>
 			<td width='500px' style='text-align:right;vertical-align:middle'>
-				<input type="radio" id="31" name="motif" value="Relance">
+				<input type="radio" id="31a" name="motif" value="Relance" onchange="hidding()">
 				<br>
-				<input type="radio" id="32" name="motif" value="Info">
+				<input type="radio" id="32a" name="motif" value="Info" onchange="hidding()">
 				<br>
-				<input type="radio" id="33" name="motif" value="Prise en charge">
+				<input type="radio" id="33a" name="motif" value="Prise en charge" onchange="hidding()">
 				<br>
-				<input type="radio" id="34" name="motif" value="En cours">
+				<input type="radio" id="34a" name="motif" value="En cours" onchange="hidding()">
 				<br>
-				<input type="radio" id="35" name="motif" value="RDV">
+				<input type="radio" id="35a" name="motif" value="RDV" onchange="hidding()">
 				<br>
-				<input type="radio" id="36" name="motif" value="Traité">
+				<input type="radio" id="36a" name="motif" value="Traité" onchange="hidding()">
 				<br>
-				<input type="radio" id="37" name="motif" value="Annulation">
+				<input type="radio" id="37a" name="motif" value="Annulation" onchange="hidding()">
 			</td>
 			<td width='500px' style='text-align:left;vertical-align:middle'>
-				<label for="31" style='line-height:120%'>Relance</label>
+				<label for="31a" style='line-height:120%'>Relance</label>
 				<br>
-				<label for="32" style='line-height:130%'>Info</label>
+				<label for="32a" style='line-height:130%'>Info</label>
 				<br>
-				<label for="33" style='line-height:130%'>Prise en charge</label>
+				<label for="33a" style='line-height:130%'>Prise en charge</label>
 				<br>
-				<label for="34" style='line-height:130%'>En cours</label>
+				<label for="34a" style='line-height:130%'>En cours</label>
 				<br>
-				<label for="35" style='line-height:130%'>RDV (non pris en compte pour le moment)</label>
+				<label for="35a" style='line-height:130%'>RDV</label>
 				<br>
-				<label for="36" style='line-height:130%'>Traité</label>
+				<label for="36a" style='line-height:130%'>Traité</label>
 				<br>
-				<label for="37" style='line-height:130%'>Annulation</label>
+				<label for="37a" style='line-height:130%'>Annulation</label>
 			</td>
 		</tr>
 		
@@ -206,7 +206,7 @@
 	
 	<tr align='center'>
 			<td colspan="2" style='text-align:center;vertical-align:middle'>
-				<button type="submit" form="production" id="submit-form" name="envoyer">Envoyer</button>
+				<button type="submit" form="production" id="submit-form" name="envoyer" >Envoyer</button>
 			</td>
 		</tr>
 </table>
@@ -240,6 +240,19 @@
 
     function hidding() {
 		if($('.new_sav').is(":checked")) {
+			document.getElementById("21a").checked = false;//\
+			document.getElementById("22a").checked = false;// \
+			document.getElementById("23a").checked = false;//  }-AUTEUR
+			document.getElementById("24a").checked = false;// /
+			document.getElementById("25a").checked = false;///
+			document.getElementById("31a").checked = false;//\
+			document.getElementById("32a").checked = false;// \
+			document.getElementById("33a").checked = false;//  \
+			document.getElementById("34a").checked = false;//   }-MOTIF
+			document.getElementById("35a").checked = false;//  /
+			document.getElementById("36a").checked = false;// /
+			document.getElementById("37a").checked = false;///
+			
 			$(".cl_adresse").show();
 			$(".cl_bfiche").show();
 			$(".cl_type").show();
@@ -255,6 +268,10 @@
 			$(".cl_motif").show();
 			$(".fiche").show();
 			$(".bfiche").prop("checked", false);
+			document.getElementById("11").checked = false;//\
+			document.getElementById("12").checked = false;// \
+			document.getElementById("13").checked = false;//  }-TYPE
+			document.getElementById("14").checked = false;// /
 			}
         else {
 			//$(".cl_adresse").prop("disabled", false);
@@ -263,6 +280,22 @@
 			$(".cl_type").hide();
 			$(".cl_auteur").hide();
 			$(".cl_motif").hide();
+			document.getElementById("11").checked = false;//\
+			document.getElementById("12").checked = false;// \
+			document.getElementById("13").checked = false;//  }-TYPE
+			document.getElementById("14").checked = false;// /
+			document.getElementById("21a").checked = false;//\
+			document.getElementById("22a").checked = false;// \
+			document.getElementById("23a").checked = false;//  }-AUTEUR
+			document.getElementById("24a").checked = false;// /
+			document.getElementById("25a").checked = false;///
+			document.getElementById("31a").checked = false;//\
+			document.getElementById("32a").checked = false;// \
+			document.getElementById("33a").checked = false;//  \
+			document.getElementById("34a").checked = false;//   }-MOTIF
+			document.getElementById("35a").checked = false;//  /
+			document.getElementById("36a").checked = false;// /
+			document.getElementById("37a").checked = false;///
 			}
 			
 		if($('.bfiche').is(":checked"))   
@@ -270,7 +303,7 @@
         else
             $(".fiche").show();
 			
-		if($('.cl_auteur_radio_autre').is(":checked"))
+		if(document.getElementById("25a").checked)
             $(".cl_auteur_input_autre").show();
         else
             $(".cl_auteur_input_autre").hide();
@@ -282,7 +315,7 @@
     }
 </script>
 
-<script type="text/javascript">
+<script>
 	//ENVOI LES PIECES JOINTES SUR LE DRIVE
 
     $('#pj').on("change", function() {
@@ -296,18 +329,20 @@
             html += '<input type="hidden" name="filename" value="' + e.target.fileName + '" >';
             $("#data").empty().append(html);
         }
-		$('#submit-form').submit();
         fr.readAsDataURL(file);
     });
-	
-	
+</script>
+
+<script type="text/javascript">
 	//ENVOI LES DONNEES SUR LA FEUILLE DE CALCULE
 
     var $form = $('form#production'),
         url = 'https://script.google.com/macros/s/AKfycbyJ7_TTp1UNBFVGB4XNgrbquEN_gY-5n4GhtmqqjFHCzRLidSDq/exec';
-	
+
     $('#submit-form').on('click', function(e) {
-		if($('.cl_auteur_radio_autre').is(":checked")) document.getElementById("25").value = document.getElementById("252").value;
+		if(document.getElementById("25a").checked) {
+			document.getElementById("25a").value = document.getElementById("252").value;
+		}
         e.preventDefault();
         var jqxhr = $.ajax({
             url: url,
@@ -315,12 +350,12 @@
             dataType: "json",
             data: $form.serializeObject()
         }).done(function(){
-               //$('#form_pj').submit();
+               // do something
           }
          );
-		 if($('.cl_b_pj_chk').is(":checked")) $('#form_pj').submit();
-		 //window.top.location.href="http://hattais.org";
-    });
+	if($('.cl_b_pj_chk').is(":checked")) $('#form_pj').submit();
+	else window.top.location.href="http://hattais.org";
+    });	
 </script>
 
 </body>
