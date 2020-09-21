@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-<!-- SAFE V49 -->
+<!-- SAFE V74 -->
 
 
 <html lang="fr">
@@ -27,11 +27,11 @@
 		
 		<tr align='center'>
 			<td width='500px' style='text-align:right;vertical-align:middle'>
-				<input class="new_sav" type="radio" id="01a" name="raison" value="new_sav" checked onchange="hidding()">
+				<input class="new_sav" type="radio" id="01a" name="raison" value="new_sav" checked onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 				<br>
-				<input class="retour_sav" type="radio" id="02a" name="raison" value="retour_sav" onchange="hidding()">
+				<input class="retour_sav" type="radio" id="02a" name="raison" value="retour_sav" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 				<br>
-				<input class="etude" type="radio" id="03a" name="raison" value="etude" onchange="hidding()">
+				<input class="etude" type="radio" id="03a" name="raison" value="etude" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 			</td>
 			<td width='500px' style='text-align:left;vertical-align:middle'>
 				<label for="01b" style='line-height:130%'>Nouveau SAV</label>
@@ -51,7 +51,7 @@
 		
 		<tr class="cl_bfiche" align='center'>
 			<td width='500px' style='text-align:right;vertical-align:middle'>
-				<input class="bfiche" id="id_bfiche" type="checkbox" name="bfiche" onchange="hidding()">
+				<input class="bfiche" id="id_bfiche" type="checkbox" name="bfiche" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 			</td>
 			<td width='500px' style='text-align:left;vertical-align:middle'>
 				<label for="bfiche">Sans N° de fiche.</label>
@@ -63,7 +63,7 @@
 				<label class="fiche" for="fiche">Numero de fiche :</label>
 			</td>
 			<td width='500px' style='text-align:left;vertical-align:middle'>
-				<input class="fiche" type="text" id="id_inp_fiche" name="fiche" size="10" onchange="hidding()">
+				<input class="fiche" type="text" id="id_inp_fiche" name="fiche" size="10" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 			</td>
 		</tr>
 		<tr class="cl_adresse" align='center'>
@@ -71,7 +71,7 @@
 				<label for="adresse">Adresse :</label>
 			</td>
 			<td width='500px' style='text-align:left;vertical-align:middle'>
-				<input type="text" id="id_inp_adresse" name="adresse" size="30" onchange="hidding()">
+				<input type="text" id="id_inp_adresse" name="adresse" size="30" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 			</td>
 		</tr>
 		
@@ -84,13 +84,13 @@
 		
 		<tr class="cl_type" align='center'>
 			<td width='500px' style='text-align:right;vertical-align:middle'>
-				<input type="radio" id="11" name="type" value="Dépannage" onchange="hidding()">
+				<input type="radio" id="11" name="type" value="Dépannage" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 				<br>
-				<input type="radio" id="12" name="type" value="Inter sur RDV" onchange="hidding()">
+				<input type="radio" id="12" name="type" value="Inter sur RDV" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 				<br>
-				<input type="radio" id="13" name="type" value="Changement de Nom" onchange="hidding()">
+				<input type="radio" id="13" name="type" value="Changement de Nom" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 				<br>
-				<input type="radio" id="14" name="type" value="Création de Badge/Émetteur" onchange="hidding()">
+				<input type="radio" id="14" name="type" value="Création de Badge/Émetteur" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 			</td>
 			<td width='500px' style='text-align:left;vertical-align:middle'>
 				<label for="11" style='line-height:130%'>Dépannage</label>
@@ -112,15 +112,15 @@
 		
 		<tr class="cl_auteur" align='center' hidden>
 			<td width='500px' style='text-align:right;vertical-align:middle'>
-				<input type="radio" id="21a" name="auteur" value="Accueil" onchange="hidding()">
+				<input type="radio" id="21a" name="auteur" value="Accueil" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 				<br>
-				<input type="radio" id="22a" name="auteur" value="David" onchange="hidding()">
+				<input type="radio" id="22a" name="auteur" value="David" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 				<br>
-				<input type="radio" id="23a" name="auteur" value="Clément" onchange="hidding()">
+				<input type="radio" id="23a" name="auteur" value="Clément" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 				<br>
-				<input type="radio" id="24a" name="auteur" value="Eric" onchange="hidding()">
+				<input type="radio" id="24a" name="auteur" value="Eric" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 				<br>
-				<input type="radio" id="25a" name="auteur" value=" " onchange="hidding()">
+				<input type="radio" id="25a" name="auteur" value=" " onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 			</td>
 			<td width='500px' style='text-align:left;vertical-align:middle'>
 				<label for="21a" style='line-height:130%'>Accueil</label>
@@ -132,7 +132,7 @@
 				<label for="24a" style='line-height:130%'>Eric</label>
 				<br>
 				<label for="25a" style='line-height:130%'>Autre :</label>
-				<input class="cl_auteur_input_autre" type="text" id="25c" name="inp_auteur" size="10" onchange="hidding()">
+				<input class="cl_auteur_input_autre" type="text" id="25c" name="inp_auteur" size="10" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 			</td>
 		</tr>
 		
@@ -145,19 +145,19 @@
 		
 		<tr class="cl_motif" align='center' hidden>
 			<td width='500px' style='text-align:right;vertical-align:middle'>
-				<input type="radio" id="31a" name="motif" value="Relance" onchange="hidding()">
+				<input type="radio" id="31a" name="motif" value="Relance" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 				<br>
-				<input type="radio" id="32a" name="motif" value="Info" onchange="hidding()">
+				<input type="radio" id="32a" name="motif" value="Info" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 				<br>
-				<input type="radio" id="33a" name="motif" value="Prise en charge" onchange="hidding()">
+				<input type="radio" id="33a" name="motif" value="Prise en charge" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 				<br>
-				<input type="radio" id="34a" name="motif" value="En cours" onchange="hidding()">
+				<input type="radio" id="34a" name="motif" value="En cours" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 				<br>
-				<input type="radio" id="35a" name="motif" value="RDV" onchange="hidding()">
+				<input type="radio" id="35a" name="motif" value="RDV" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 				<br>
-				<input type="radio" id="36a" name="motif" value="Traité" onchange="hidding()">
+				<input type="radio" id="36a" name="motif" value="Traité" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 				<br>
-				<input type="radio" id="37a" name="motif" value="Annulation" onchange="hidding()">
+				<input type="radio" id="37a" name="motif" value="Annulation" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 			</td>
 			<td width='500px' style='text-align:left;vertical-align:middle'>
 				<label for="31a" style='line-height:120%'>Relance</label>
@@ -195,7 +195,7 @@
 		
 		<tr class="cl_b_pj" align='center'>
 			<td width='500px' style='text-align:right;vertical-align:middle'>
-				<input class="cl_b_pj_chk" type="checkbox" name="bPJ" onchange="hidding()">
+				<input class="cl_b_pj_chk" type="checkbox" name="bPJ" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 			</td>
 			<td width='500px' style='text-align:left;vertical-align:middle'>
 				<label for="bfiche">Pièce(s) Jointe(s) ?</label>
@@ -256,11 +256,13 @@
 
     function hidding() {
 		if($('.new_sav').is(":checked")) {
+			//document.getElementById("id_auteur").style = "color:black";
 			document.getElementById("21a").checked = false;//\
 			document.getElementById("22a").checked = false;// \
 			document.getElementById("23a").checked = false;//  }-AUTEUR
 			document.getElementById("24a").checked = false;// /
 			document.getElementById("25a").checked = false;///
+			//document.getElementById("id_motif").style = "color:black";
 			document.getElementById("31a").checked = false;//\
 			document.getElementById("32a").checked = false;// \
 			document.getElementById("33a").checked = false;//  \
@@ -284,6 +286,7 @@
 			$(".cl_motif").show();
 			$(".fiche").show();
 			$(".bfiche").prop("checked", false);
+			//document.getElementById("id_type").style = "color:black";
 			document.getElementById("11").checked = false;//\
 			document.getElementById("12").checked = false;// \
 			document.getElementById("13").checked = false;//  }-TYPE
@@ -296,15 +299,18 @@
 			$(".cl_type").hide();
 			$(".cl_auteur").hide();
 			$(".cl_motif").hide();
+			//document.getElementById("id_type").style = "color:black";
 			document.getElementById("11").checked = false;//\
 			document.getElementById("12").checked = false;// \
 			document.getElementById("13").checked = false;//  }-TYPE
 			document.getElementById("14").checked = false;// /
+			//document.getElementById("id_auteur").style = "color:black";
 			document.getElementById("21a").checked = false;//\
 			document.getElementById("22a").checked = false;// \
 			document.getElementById("23a").checked = false;//  }-AUTEUR
 			document.getElementById("24a").checked = false;// /
 			document.getElementById("25a").checked = false;///
+			//document.getElementById("id_motif").style = "color:black";
 			document.getElementById("31a").checked = false;//\
 			document.getElementById("32a").checked = false;// \
 			document.getElementById("33a").checked = false;//  \
@@ -349,6 +355,24 @@
         else
             $(".cl_pj").hide();
     }
+	
+	function refuserToucheEntree(event)
+{
+    // Compatibilité IE / Firefox
+    if(!event && window.event) {
+        event = window.event;
+    }
+    // IE
+    if(event.keyCode == 13) {
+        event.returnValue = false;
+        event.cancelBubble = true;
+    }
+    // DOM
+    if(event.which == 13) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+}
 </script>
 
 <script>
@@ -378,10 +402,10 @@
 
 <script type="text/javascript">
     $('#submit-form').on('click', function(e) {
+		var conditions = false;
 		if(document.getElementById("25a").checked) {
 			document.getElementById("25a").value = document.getElementById("25c").value;
 		}
-		var conditions = true;
 	<!-- INFORMATIONS -->
 		var bInfo = true;
 		<!-- fiche -->
