@@ -21,7 +21,7 @@
 		<input type="hidden" name="n_form" value="prod">
 		<tr align='center'>
 			<td colspan="2" style='text-align:center;vertical-align:middle'>
-				<h3>FICHE D'INTERVENTION :</h3>
+				<h3 id="id_titre">FICHE D'INTERVENTION :</h3>
 			</td>
 		</tr>
 		
@@ -255,14 +255,15 @@
 	}
 
     function hidding() {
+		document.getElementById("id_titre").style = "color:black";
 		if($('.new_sav').is(":checked")) {
-			//document.getElementById("id_auteur").style = "color:black";
+			document.getElementById("id_auteur").style = "color:black";
 			document.getElementById("21a").checked = false;//\
 			document.getElementById("22a").checked = false;// \
 			document.getElementById("23a").checked = false;//  }-AUTEUR
 			document.getElementById("24a").checked = false;// /
 			document.getElementById("25a").checked = false;///
-			//document.getElementById("id_motif").style = "color:black";
+			document.getElementById("id_motif").style = "color:black";
 			document.getElementById("31a").checked = false;//\
 			document.getElementById("32a").checked = false;// \
 			document.getElementById("33a").checked = false;//  \
@@ -286,7 +287,7 @@
 			$(".cl_motif").show();
 			$(".fiche").show();
 			$(".bfiche").prop("checked", false);
-			//document.getElementById("id_type").style = "color:black";
+			document.getElementById("id_type").style = "color:black";
 			document.getElementById("11").checked = false;//\
 			document.getElementById("12").checked = false;// \
 			document.getElementById("13").checked = false;//  }-TYPE
@@ -299,18 +300,18 @@
 			$(".cl_type").hide();
 			$(".cl_auteur").hide();
 			$(".cl_motif").hide();
-			//document.getElementById("id_type").style = "color:black";
+			document.getElementById("id_type").style = "color:black";
 			document.getElementById("11").checked = false;//\
 			document.getElementById("12").checked = false;// \
 			document.getElementById("13").checked = false;//  }-TYPE
 			document.getElementById("14").checked = false;// /
-			//document.getElementById("id_auteur").style = "color:black";
+			document.getElementById("id_auteur").style = "color:black";
 			document.getElementById("21a").checked = false;//\
 			document.getElementById("22a").checked = false;// \
 			document.getElementById("23a").checked = false;//  }-AUTEUR
 			document.getElementById("24a").checked = false;// /
 			document.getElementById("25a").checked = false;///
-			//document.getElementById("id_motif").style = "color:black";
+			document.getElementById("id_motif").style = "color:black";
 			document.getElementById("31a").checked = false;//\
 			document.getElementById("32a").checked = false;// \
 			document.getElementById("33a").checked = false;//  \
@@ -402,10 +403,11 @@
 
 <script type="text/javascript">
     $('#submit-form').on('click', function(e) {
-		var conditions = false;
 		if(document.getElementById("25a").checked) {
 			document.getElementById("25a").value = document.getElementById("25c").value;
 		}
+		
+		var conditions = true;
 	<!-- INFORMATIONS -->
 		var bInfo = true;
 		<!-- fiche -->
@@ -417,26 +419,27 @@
 			document.getElementById("id_info").style = "color:red";
 		}
 	<!-- TYPE -->
-		if(!document.getElementById("11").checked && !document.getElementById("12").checked && !document.getElementById("13").checked && !document.getElementById("14").checked) {
+		if(document.getElementById("01a").checked && !document.getElementById("11").checked && !document.getElementById("12").checked && !document.getElementById("13").checked && !document.getElementById("14").checked) {
 			conditions = false;
 			document.getElementById("id_type").style = "color:red";
 		}
 	<!-- AUTEUR -->
-		if(!document.getElementById("21a").checked && !document.getElementById("22a").checked && !document.getElementById("23a").checked && !document.getElementById("24a").checked && !document.getElementById("25a").checked) {
+		if(document.getElementById("02a").checked && !document.getElementById("21a").checked && !document.getElementById("22a").checked && !document.getElementById("23a").checked && !document.getElementById("24a").checked && !document.getElementById("25a").checked) {
 			conditions = false;
 			document.getElementById("id_auteur").style = "color:red";
 		}
 	<!-- MOTIF -->
-		if(!document.getElementById("31a").checked && !document.getElementById("32a").checked && !document.getElementById("33a").checked && !document.getElementById("34a").checked && !document.getElementById("35a").checked && !document.getElementById("36a").checked && !document.getElementById("37a").checked) {
+		if(document.getElementById("02a").checked && !document.getElementById("31a").checked && !document.getElementById("32a").checked && !document.getElementById("33a").checked && !document.getElementById("34a").checked && !document.getElementById("35a").checked && !document.getElementById("36a").checked && !document.getElementById("37a").checked) {
 			conditions = false;
 			document.getElementById("id_motif").style = "color:red";
-		}	
+		}
 		if(conditions) {
 			$('#production_form').submit();
 			setTimeout(function() {
 				$('#form_pj').submit();
 			}, 1500);
 		}
+		else document.getElementById("id_titre").style = "color:red";
 	});
 </script>
 
