@@ -2,7 +2,8 @@
 
 
 <!-- SAFE V74 -->
-
+<!-- Ajouter les RDV -->
+<!-- ajouter les description lors de RDV et PRISE EN CHARGE -->
 
 <html lang="fr">
 <head>
@@ -181,7 +182,14 @@
 				 <hr width='500px'>
 			</td>
 		</tr>
-		
+		<tr class="clRdv" id="id_rdv" align='center' hidden>
+			<td colspan="2" width='1000px' style='vertical-align:middle'>
+				<label for="description">RDV :</label>
+				<br>
+				<input type="datetime-local" id="id_inp_rdv" name="rdv">
+				<hr width='500px'>
+			</td>
+		</tr>
 		<tr class="clDescription" align='center'>
 			<td colspan="2" width='1000px' style='vertical-align:middle'>
 				<label for="description">Description :</label>
@@ -292,6 +300,16 @@
 			document.getElementById("12").checked = false;// \
 			document.getElementById("13").checked = false;//  }-TYPE
 			document.getElementById("14").checked = false;// /
+			if(document.getElementById("35a").checked) {  // RDV
+				$(".clRdv").show();
+				$(".clDescription").hide();
+				$(".cl_b_pj").hide();
+				}
+			else {
+				$(".clRdv").hide();
+				$(".clDescription").show();
+				$(".cl_b_pj").show();
+				}
 			}
         else {
 			//$(".cl_adresse").prop("disabled", false);
@@ -338,7 +356,8 @@
 	<!-- MOTIF -->
 		if(document.getElementById("31a").checked || document.getElementById("32a").checked || document.getElementById("33a").checked || document.getElementById("34a").checked || document.getElementById("35a").checked || document.getElementById("36a").checked || document.getElementById("37a").checked) {
 			document.getElementById("id_motif").style = "color:black";
-		}	
+		}
+		
 		if($('.bfiche').is(":checked")) { 
             $(".fiche").hide();
 			}
