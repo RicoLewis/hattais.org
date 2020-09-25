@@ -121,6 +121,8 @@
 				<br>
 				<input type="radio" id="24a" name="auteur" value="Eric" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 				<br>
+				<input type="radio" id="26a" name="auteur" value="JeanF" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
+				<br>
 				<input type="radio" id="25a" name="auteur" value=" " onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 			</td>
 			<td width='500px' style='text-align:left;vertical-align:middle'>
@@ -131,6 +133,8 @@
 				<label for="23a" style='line-height:130%'>Clément</label>
 				<br>
 				<label for="24a" style='line-height:130%'>Eric</label>
+				<br>
+				<label for="26a" style='line-height:130%'>Jean-François</label>
 				<br>
 				<label for="25a" style='line-height:130%'>Autre :</label>
 				<input class="cl_auteur_input_autre" type="text" id="25c" name="inp_auteur" size="10" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
@@ -266,10 +270,11 @@
 		document.getElementById("id_titre").style = "color:black";
 		if($('.new_sav').is(":checked")) {
 			document.getElementById("id_auteur").style = "color:black";
-			document.getElementById("21a").checked = false;//\
-			document.getElementById("22a").checked = false;// \
-			document.getElementById("23a").checked = false;//  }-AUTEUR
-			document.getElementById("24a").checked = false;// /
+			document.getElementById("21a").checked = false;// \
+			document.getElementById("22a").checked = false;//  \
+			document.getElementById("23a").checked = false;//   }-AUTEUR
+			document.getElementById("24a").checked = false;//  /
+			document.getElementById("26a").checked = false;// /
 			document.getElementById("25a").checked = false;///
 			document.getElementById("id_motif").style = "color:black";
 			document.getElementById("31a").checked = false;//\
@@ -324,10 +329,11 @@
 			document.getElementById("13").checked = false;//  }-TYPE
 			document.getElementById("14").checked = false;// /
 			document.getElementById("id_auteur").style = "color:black";
-			document.getElementById("21a").checked = false;//\
-			document.getElementById("22a").checked = false;// \
-			document.getElementById("23a").checked = false;//  }-AUTEUR
-			document.getElementById("24a").checked = false;// /
+			document.getElementById("21a").checked = false;// \
+			document.getElementById("22a").checked = false;//  \
+			document.getElementById("23a").checked = false;//   }-AUTEUR
+			document.getElementById("24a").checked = false;//  /
+			document.getElementById("26a").checked = false;// /
 			document.getElementById("25a").checked = false;///
 			document.getElementById("id_motif").style = "color:black";
 			document.getElementById("31a").checked = false;//\
@@ -350,7 +356,7 @@
 			document.getElementById("id_type").style = "color:black";
 		}
 	<!-- AUTEUR -->
-		if(document.getElementById("21a").checked || document.getElementById("22a").checked || document.getElementById("23a").checked || document.getElementById("24a").checked || document.getElementById("25a").checked) {
+		if(document.getElementById("21a").checked || document.getElementById("22a").checked || document.getElementById("23a").checked || document.getElementById("24a").checked || document.getElementById("26a").checked || document.getElementById("25a").checked) {
 			document.getElementById("id_auteur").style = "color:black";
 		}
 	<!-- MOTIF -->
@@ -443,7 +449,7 @@
 			document.getElementById("id_type").style = "color:red";
 		}
 	<!-- AUTEUR -->
-		if(document.getElementById("02a").checked && !document.getElementById("21a").checked && !document.getElementById("22a").checked && !document.getElementById("23a").checked && !document.getElementById("24a").checked && !document.getElementById("25a").checked) {
+		if(document.getElementById("02a").checked && !document.getElementById("21a").checked && !document.getElementById("22a").checked && !document.getElementById("23a").checked && !document.getElementById("24a").checked && !document.getElementById("26a").checked && !document.getElementById("25a").checked) {
 			conditions = false;
 			document.getElementById("id_auteur").style = "color:red";
 		}
