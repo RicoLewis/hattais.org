@@ -207,7 +207,7 @@
 		
 		<tr class="cl_b_pj" align='center'>
 			<td width='500px' style='text-align:right;vertical-align:middle'>
-				<input class="cl_b_pj_chk" type="checkbox" name="bPJ" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
+				<input class="cl_b_pj_chk" id="id_b_pj_chk" type="checkbox" name="bPJ" onchange="hidding()" onkeypress="refuserToucheEntree(event)">
 			</td>
 			<td width='500px' style='text-align:left;vertical-align:middle'>
 				<label for="bfiche">Pièce(s) Jointe(s) ?</label>
@@ -430,6 +430,10 @@
     $('#submit-form').on('click', function(e) {
 		if(document.getElementById("25a").checked) {
 			document.getElementById("25a").value = document.getElementById("25c").value;
+		}
+		
+		if (!document.getElementById("id_b_pj_chk").checked) {
+			document.getElementById("nbrData").value = "0";
 		}
 		
 		var conditions = true;
